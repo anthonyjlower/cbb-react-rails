@@ -1,6 +1,8 @@
 class TeamsController < ApplicationController
+  before_action :get_decorated_teams
+
   def index
-    @teams = get_decorated_teams
+    @serialized_teams = TeamSerializer.new(@teams).serializable_hash
   end
 
   # def sync
@@ -13,7 +15,7 @@ class TeamsController < ApplicationController
   private
 
   def get_decorated_teams
-    redis_teams.map do |team|
+    @teams ||= redis_teams.map do |team|
       TeamDecorator.new(team: team)
     end.sort_by(&:net_rank)
   end
