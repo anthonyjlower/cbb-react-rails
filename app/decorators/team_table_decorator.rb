@@ -13,7 +13,7 @@ class TeamTableDecorator
     [
       { field: 'name', filter: true, buttons: 'apply', filterParams: { buttons: ['apply', 'reset']} },
       { field: 'record' },
-      { field: 'net_rank', sortable: true, filter: 'agNumberColumnFilter' },
+      { headerName: 'Rank', field: 'net_rank', sortable: true, filter: 'agNumberColumnFilter' },
       { field: 'net_rating', sortable: true, filter: 'agNumberColumnFilter' },
       { field: 'offense_rating', sortable: true, filter: 'agNumberColumnFilter' },
       { field: 'defense_rating', sortable: true, filter: 'agNumberColumnFilter' },

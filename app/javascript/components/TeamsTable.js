@@ -8,7 +8,7 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 const AgGrid = (rowData, columnDefs) => {
   console.log(rowData[0])
   return (
-    <div className="ag-theme-alpine" style={{height: 400, width: '100vw'}}>
+    <div className="ag-theme-alpine" style={{height: '90vh', width: '95vw'}}>
       <AgGridReact
         rowData={rowData}
         columnDefs={columnDefs}
