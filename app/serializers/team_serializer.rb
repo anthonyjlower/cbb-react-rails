@@ -10,7 +10,6 @@ class TeamSerializer
              :tempo_rank,
              :luck_rank,
              :sos_rank,
-             :first_round_players,
              :first_round_perimiter?,
              :free_throw_percentage,
              :effective_field_goal_percentage,
@@ -26,5 +25,9 @@ class TeamSerializer
     obj.players.map do |player|
       PlayerSerializer.new(player).serializable_hash
     end
+  end
+
+  attribute :top_ranked_player do |obj|
+    obj.players.map(&:rank).min
   end
 end

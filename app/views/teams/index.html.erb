@@ -1,6 +1,6 @@
 <h1>Teams#index</h1>
 <p>Find me in app/views/teams/index.html.erb</p>
 
-<%= react_component("TeamsTable", { teams: @serialized_teams[:data] }) %>
+<%= react_component("TeamsTable", { teamRows: @table.team_rows, columnDefs: @table.column_settings }) %>
 
 <%#= link_to('Sync Data', sync_teams_path) %>

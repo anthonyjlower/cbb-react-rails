@@ -29,7 +29,7 @@ class NbaDraftScraper < WebScraper
   end
 
   def parse_draft_rank(data)
-    data.css('.rank').text
+    data.css('.rank').text.to_i
   end
 
   def parse_name(data)

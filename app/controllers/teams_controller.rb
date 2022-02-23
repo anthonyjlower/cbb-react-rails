@@ -1,8 +1,8 @@
 class TeamsController < ApplicationController
-  before_action :get_decorated_teams
+  # before_action :get_decorated_teams
 
   def index
-    @serialized_teams = TeamSerializer.new(@teams).serializable_hash
+    @table = TeamTableDecorator.new(serialized_teams: serialized_teams)
   end
 
   # def sync
@@ -14,7 +14,11 @@ class TeamsController < ApplicationController
 
   private
 
-  def get_decorated_teams
+  def serialized_teams
+    @serialized_teams ||= TeamSerializer.new(decorated_teams).serializable_hash
+  end
+
+  def decorated_teams
     @teams ||= redis_teams.map do |team|
       TeamDecorator.new(team: team)
     end.sort_by(&:net_rank)
@@ -23,5 +27,13 @@ class TeamsController < ApplicationController
   def redis_teams
     data = redis.get('teams')
     data.present? ? JSON.parse(data) : []
+  end
+
+  def team_column_defs
+    [
+      { field: 'name', sortable: true, filter: true },
+      { field: 'record' },
+      { field: 'net_rank', sortable: true, filter: 'agNumberColumnFilter' },
+    ]
   end
 end
