@@ -58,6 +58,10 @@ class TeamDecorator
     players_data.map { |player| PlayerDecorator.new(player: player) }
   end
 
+  def top_ranked_player
+    players_data.pluck(:draft_rank).min
+  end
+
   def first_round_players
     @first_round_players ||= players_data.select { |player| player[:draft_rank].to_i <= 30 }
   end
@@ -77,15 +81,15 @@ class TeamDecorator
   end
 
   def turnover_rate
-    display_as_percentage((turnovers.to_f / (field_goal_attempts + 0.44 * free_throw_attempts + turnovers)))
+    display_as_percentage(turnovers / possessions.to_f)
   end
 
   def offensive_rebound_rate
     display_as_percentage((offensive_rebounds / missed_shots.to_f))
   end
 
-  def free_throw_makes_per_field_goal_attempt
-    ((free_throw_makes / field_goal_attempts.to_f)).round(2)
+  def free_throw_attempts_per_field_goal_attempt
+    ((free_throw_attempts / field_goal_attempts.to_f)).round(2)
   end
 
   def points_per_game
@@ -148,5 +152,9 @@ class TeamDecorator
 
   def turnovers
     @turnovers ||= @team[:turnovers]
+  end
+
+  def possessions
+    @possesions ||= field_goal_attempts - offensive_rebounds + turnovers + 0.475 * free_throw_attempts
   end
 end
