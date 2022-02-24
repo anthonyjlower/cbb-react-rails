@@ -58,6 +58,14 @@ class TeamDecorator
     players_data.map { |player| PlayerDecorator.new(player: player) }
   end
 
+  def top_100_players_count
+    players_data.count
+  end
+
+  def first_round_players_count
+    first_round_players.count
+  end
+
   def top_ranked_player
     players_data.pluck(:draft_rank).min
   end
@@ -89,7 +97,7 @@ class TeamDecorator
   end
 
   def free_throw_attempts_per_field_goal_attempt
-    ((free_throw_attempts / field_goal_attempts.to_f)).round(2)
+    (free_throw_attempts / field_goal_attempts.to_f).round(2)
   end
 
   def points_per_game

@@ -14,6 +14,8 @@ class TeamSerializer
              :sos_rank,
              :first_round_perimiter?,
              :top_ranked_player,
+             :top_100_players_count,
+             :first_round_players_count,
              :free_throw_percentage,
              :effective_field_goal_percentage,
              :turnover_rate,
