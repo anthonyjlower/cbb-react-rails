@@ -1,16 +1,8 @@
 class TeamsController < ApplicationController
-  # before_action :get_decorated_teams
-
   def index
     @table = TeamTableDecorator.new(serialized_teams: serialized_teams)
+    @synced_at = redis_synced_at
   end
-
-  # def sync
-  #   redis.set('teams', Team.build.to_json)
-  #   redis.set('synced_at', current_time_central)
-
-  #   redirect_to(teams_path)
-  # end
 
   private
 
@@ -29,11 +21,8 @@ class TeamsController < ApplicationController
     data.present? ? JSON.parse(data) : []
   end
 
-  def team_column_defs
-    [
-      { field: 'name', sortable: true, filter: true },
-      { field: 'record' },
-      { field: 'net_rank', sortable: true, filter: 'agNumberColumnFilter' },
-    ]
+  def redis_synced_at
+    date = redis.get('synced_at')
+    date && date.to_datetime.strftime('%^b %d %Y @ %I:%M%p')
   end
 end

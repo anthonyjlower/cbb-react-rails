@@ -9,12 +9,11 @@ const AgGrid = (rowData, columnDefs) => {
   let gridApi = {}
 
   const onGridReady = (params) => {
-    console.log(params.api)
-    gridApi = params.api
+    // gridApi = params.api
+    params.api.sizeColumnsToFit();
   }
 
   const sizeToFit = (gridApi) => {
-    console.log(gridApi)
     gridApi.sizeColumnsToFit();
   }
 
