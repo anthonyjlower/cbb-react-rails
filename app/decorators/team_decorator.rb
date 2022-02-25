@@ -112,6 +112,24 @@ class TeamDecorator
     display_as_percentage((three_point_makes / three_point_attempts.to_f))
   end
 
+  # Odds
+
+  def sweet_sixteen_odds
+    OddsCalculator.calc_breakeven(@team[:sweet_sixteen])
+  end
+
+  def elite_eight_odds
+    OddsCalculator.calc_breakeven(@team[:elite_eight])
+  end
+
+  def final_four_odds
+    OddsCalculator.calc_breakeven(@team[:final_four])
+  end
+
+  def champ_odds
+    OddsCalculator.calc_breakeven(@team[:champ])
+  end
+
   private
 
   def players_data

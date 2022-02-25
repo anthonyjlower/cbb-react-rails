@@ -24,7 +24,11 @@ class TeamSerializer
              :points_per_game,
              :field_goal_percentage,
              :three_point_percentage,
-             :free_throw_percentage
+             :free_throw_percentage,
+             :sweet_sixteen_odds,
+             :elite_eight_odds,
+             :final_four_odds,
+             :champ_odds
 
   attribute :players do |obj|
     obj.players.map do |player|
