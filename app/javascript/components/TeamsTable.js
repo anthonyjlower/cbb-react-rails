@@ -9,14 +9,13 @@ const AgGrid = (rowData, columnDefs) => {
   let gridApi = {}
 
   const onGridReady = (params) => {
-    gridApi = params.api
-    // params.api.sizeColumnsToFit();
+    // gridApi = params.api
+    params.api.sizeColumnsToFit();
   }
 
   const sizeToFit = (gridApi) => {
     gridApi.sizeColumnsToFit();
   }
-  console.log('In TeamsTable')
 
   return (
     <>
