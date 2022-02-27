@@ -16,6 +16,7 @@ const AgGrid = (rowData, columnDefs) => {
   const sizeToFit = (gridApi) => {
     gridApi.sizeColumnsToFit();
   }
+  console.log('In TeamsTable')
 
   return (
     <>
