@@ -35,12 +35,15 @@
   },
   "formation": {
   },
+
   "addons": [
     "heroku-postgresql"
   ],
+  "stack": "heroku-18",
   "buildpacks": [
     {
       "url": "heroku/ruby"
     }
-  ]
+  ],
+
 }
