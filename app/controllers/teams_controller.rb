@@ -1,10 +1,14 @@
 class TeamsController < ApplicationController
   def index
-    @table = TeamTableDecorator.new(serialized_teams: serialized_teams)
+    @table = TeamTableDecorator.new(serialized_teams: serialized_teams, columns: columns_params)
     @synced_at = redis_synced_at
   end
 
   private
+
+  def columns_params
+    params[:columns]
+  end
 
   def serialized_teams
     @serialized_teams ||= TeamSerializer.new(decorated_teams).serializable_hash
