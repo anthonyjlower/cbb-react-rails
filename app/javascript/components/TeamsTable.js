@@ -2,15 +2,15 @@ import React, { useRef } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import PropTypes from 'prop-types';
 
-import 'ag-grid-community/dist/styles/ag-grid.css';
-import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+// import 'ag-grid-community/dist/styles/ag-grid.css';
+// import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
 const AgGrid = (rowData, columnDefs) => {
   let gridApi = {}
 
   const onGridReady = (params) => {
-    // gridApi = params.api
-    params.api.sizeColumnsToFit();
+    gridApi = params.api
+    // params.api.sizeColumnsToFit();
   }
 
   const sizeToFit = (gridApi) => {
