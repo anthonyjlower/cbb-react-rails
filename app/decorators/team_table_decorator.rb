@@ -23,7 +23,7 @@ class TeamTableDecorator
       { headerName: 'Off Rank', field: 'offense_rank', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
       { headerName: 'Def Rank', field: 'defense_rank', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
       { headerName: '1st Round Perimiter', field: 'first_round_perimiter?', sortable: true, filter: true, filterParams: { buttons: ['reset'] } },
-      { headerName: 'Highest Ranked Player', field: 'top_ranked_player', sortable: true },
+      { headerName: 'Highest Ranked Player', field: 'top_ranked_player', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
     ]
   end
 
@@ -36,10 +36,10 @@ class TeamTableDecorator
 
   def odds_columns
     [
-      { headerName: 'Sweet 16 Odds', field: :sweet_sixteen_odds },
-      { headerName: 'Elite 8 Odds', field: :elite_eight_odds },
-      { headerName: 'Final 4 Odds', field: :final_four_odds },
-      { headerName: 'Champ Odds', field: :champ_odds },
+      { headerName: 'Sweet 16 Odds', field: :sweet_sixteen_odds, sortable: true },
+      { headerName: 'Elite 8 Odds', field: :elite_eight_odds, sortable: true },
+      { headerName: 'Final 4 Odds', field: :final_four_odds, sortable: true },
+      { headerName: 'Champ Odds', field: :champ_odds, sortable: true },
     ]
   end
 
