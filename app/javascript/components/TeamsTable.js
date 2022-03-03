@@ -21,17 +21,28 @@ const AgGrid = (rowData, columnDefs) => {
     window.location.href = `/?columns=odds`
   }
 
+  const numericalNilLast = (valueA, valueB) => {
+    if (valueA && valueB) return (valueA < valueB) ? -1 : 1
+
+    return valueA ? -1 : 1
+  }
+
+  const columns = columnDefs.map(column => {
+    if (column.field !== 'top_ranked_player') return column
+
+    column.comparator = (valueA, valueB, nodeA, nodeB, isInverted) => numericalNilLast(valueA, valueB)
+    return column
+  })
+
   return (
     <>
       <div className="ag-theme-alpine" style={{height: '90vh', width: '95vw'}}>
         <button onClick={() => sizeToFit(gridApi)}>Size to Fit</button>
         <a href='./?columns=odds'>Odds Columns</a>
         <a href='./?head-to-head='>Matchup Columns</a>
-        {/*<button onClick={() => goToOddsView}>Odds Columns</button>*/}
-        {/*<button onClick={() => goToMatchupView}>Matchup Columns</button>*/}
         <AgGridReact
           rowData={rowData}
-          columnDefs={columnDefs}
+          columnDefs={columns}
           onGridReady={onGridReady}
         >
         </AgGridReact>

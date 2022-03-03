@@ -19,10 +19,10 @@ class TeamTableDecorator
   def default_columns
     [
       { field: 'name', filter: true, resizable: false, pinned: 'left', cellClass: 'lock-pinned', filterParams: { buttons: ['reset'] } },
-      { headerName: 'Rank', field: 'net_rank', sortable: true, filter: 'agNumberColumnFilter' },
-      { headerName: 'Off Rank', field: 'offense_rank', sortable: true, filter: 'agNumberColumnFilter' },
-      { headerName: 'Def Rank', field: 'defense_rank', sortable: true, filter: 'agNumberColumnFilter' },
-      { headerName: '1st Round Perimiter', field: 'first_round_perimiter?', sortable: true, filter: true },
+      { headerName: 'Rank', field: 'net_rank', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
+      { headerName: 'Off Rank', field: 'offense_rank', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
+      { headerName: 'Def Rank', field: 'defense_rank', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
+      { headerName: '1st Round Perimiter', field: 'first_round_perimiter?', sortable: true, filter: true, filterParams: { buttons: ['reset'] } },
       { headerName: 'Highest Ranked Player', field: 'top_ranked_player', sortable: true },
     ]
   end
@@ -45,10 +45,10 @@ class TeamTableDecorator
 
   def factor_four_columns
     [
-      { headerName: 'eFG%', field: 'effective_field_goal_percentage', sortable: true, filter: 'agNumberColumnFilter' },
-      { headerName: 'TO%', field: 'turnover_rate', sortable: true, filter: 'agNumberColumnFilter' },
-      { headerName: 'OReb%', field: 'offensive_rebound_rate', sortable: true, filter: 'agNumberColumnFilter' },
-      { headerName: 'FTA/FGA', field: 'free_throw_attempts_per_field_goal_attempt', sortable: true, filter: 'agNumberColumnFilter' },
+      { headerName: 'eFG%', field: 'effective_field_goal_percentage', sortable: true },
+      { headerName: 'TO%', field: 'turnover_rate', sortable: true },
+      { headerName: 'OReb%', field: 'offensive_rebound_rate', sortable: true },
+      { headerName: 'FTA/FGA', field: 'free_throw_attempts_per_field_goal_attempt', sortable: true },
     ]
   end
 
