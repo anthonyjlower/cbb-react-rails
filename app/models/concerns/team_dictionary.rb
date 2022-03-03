@@ -118,7 +118,7 @@ module TeamDictionary
         {
             "name": "BYU",
             "kenpom_name": "BYU",
-            "nbadraft_name": nil,
+            "nbadraft_name": "BYU",
             "espn_id": "252",
             "538": "BYU",
         },
@@ -438,7 +438,7 @@ module TeamDictionary
         {
             "name": "Detroit Mercy",
             "kenpom_name": "Detroit Mercy",
-            "nbadraft_name": nil,
+            "nbadraft_name": "Detroit",
             "espn_id": "2174"
         },
         {
@@ -543,7 +543,7 @@ module TeamDictionary
         {
             "name": "Florida",
             "kenpom_name": "Florida",
-            "nbadraft_name": nil,
+            "nbadraft_name": "Florida",
             "espn_id": "57",
             "538": "Florida",
         },
@@ -581,7 +581,7 @@ module TeamDictionary
         {
             "name": "Fresno St.",
             "kenpom_name": "Fresno St.",
-            "nbadraft_name": nil,
+            "nbadraft_name": "Freson St.",
             "espn_id": "278"
         },
         {
@@ -636,7 +636,7 @@ module TeamDictionary
         {
             "name": "Georgia Tech",
             "kenpom_name": "Georgia Tech",
-            "nbadraft_name": nil,
+            "nbadraft_name": "Georgia Tech",
             "espn_id": "59",
             "538": "Georgia Tech",
         },
@@ -749,7 +749,7 @@ module TeamDictionary
         {
             "name": "Illinois",
             "kenpom_name": "Illinois",
-            "nbadraft_name": nil,
+            "nbadraft_name": "Illinois",
             "espn_id": "356",
             "538": "Illinois"
         },
@@ -793,14 +793,14 @@ module TeamDictionary
         {
             "name": "Iowa",
             "kenpom_name": "Iowa",
-            "nbadraft_name": nil,
+            "nbadraft_name": "Iowa",
             "espn_id": "2294",
             "538": "Iowa",
         },
         {
             "name": "Iowa St.",
             "kenpom_name": "Iowa St.",
-            "nbadraft_name": nil,
+            "nbadraft_name": "Iowa St.",
             "espn_id": "66"
         },
         {
@@ -1164,7 +1164,7 @@ module TeamDictionary
         {
             "name": "N.C. State",
             "kenpom_name": "N.C. State",
-            "nbadraft_name": nil,
+            "nbadraft_name": "NC State",
             "espn_id": "152"
         },
         {
@@ -1360,7 +1360,7 @@ module TeamDictionary
         {
             "name": "Ohio St.",
             "kenpom_name": "Ohio St.",
-            "nbadraft_name": nil,
+            "nbadraft_name": "Ohio St.",
             "espn_id": "194",
             "538": "Ohio State",
         },
@@ -1560,7 +1560,7 @@ module TeamDictionary
         {
             "name": "Saint Joseph's",
             "kenpom_name": "Saint Joseph's",
-            "nbadraft_name": nil,
+            "nbadraft_name": "St. Joseph's",
             "espn_id": "2603"
         },
         {
@@ -1609,7 +1609,7 @@ module TeamDictionary
         {
             "name": "San Francisco",
             "kenpom_name": "San Francisco",
-            "nbadraft_name": nil,
+            "nbadraft_name": "San Francisc0",
             "espn_id": "2539"
         },
         {
@@ -1633,7 +1633,7 @@ module TeamDictionary
         {
             "name": "Seton Hall",
             "kenpom_name": "Seton Hall",
-            "nbadraft_name": nil,
+            "nbadraft_name": "Seton Hall",
             "espn_id": "2550"
         },
         {
@@ -1736,7 +1736,7 @@ module TeamDictionary
         {
             "name": "St. John's",
             "kenpom_name": "St. John's",
-            "nbadraft_name": nil,
+            "nbadraft_name": "St. Johns",
             "espn_id": "2599"
         },
         {
@@ -1748,7 +1748,7 @@ module TeamDictionary
         {
             "name": "Stanford",
             "kenpom_name": "Stanford",
-            "nbadraft_name": nil,
+            "nbadraft_name": "Stanford",
             "espn_id": "24"
         },
         {
@@ -2104,7 +2104,7 @@ module TeamDictionary
         {
             "name": "Wake Forest",
             "kenpom_name": "Wake Forest",
-            "nbadraft_name": nil,
+            "nbadraft_name": "Wake Forest",
             "espn_id": "154"
         },
         {
@@ -2147,7 +2147,7 @@ module TeamDictionary
         {
             "name": "Western Kentucky",
             "kenpom_name": "Western Kentucky",
-            "nbadraft_name": nil,
+            "nbadraft_name": "Western Kentucky",
             "espn_id": "98"
         },
         {
@@ -2179,7 +2179,7 @@ module TeamDictionary
         {
             "name": "Wisconsin",
             "kenpom_name": "Wisconsin",
-            "nbadraft_name": nil,
+            "nbadraft_name": "Wisconsin",
             "espn_id": "275",
             "538": "Wisconsin",
         },
