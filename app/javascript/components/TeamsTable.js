@@ -10,15 +10,10 @@ const AgGrid = (rowData, columnDefs) => {
 
   const onGridReady = (params) => {
     gridApi = params.api
-    // params.api.sizeColumnsToFit();
   }
 
   const sizeToFit = (gridApi) => {
     gridApi.sizeColumnsToFit();
-  }
-
-  const goToOddsView = () => {
-    window.location.href = `/?columns=odds`
   }
 
   const numericalNilLast = (valueA, valueB) => {
