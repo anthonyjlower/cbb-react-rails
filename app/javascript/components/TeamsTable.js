@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { AgGridReact } from 'ag-grid-react';
+import PlayerTooltip from './PlayerTooltip.js'
 import PropTypes from 'prop-types';
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
@@ -33,12 +34,13 @@ const AgGrid = (rowData, columnDefs) => {
     <>
       <div className="ag-theme-alpine" style={{height: '90vh', width: '95vw'}}>
         <button onClick={() => sizeToFit(gridApi)}>Size to Fit</button>
-        <a href='./?columns=odds'>Odds Columns</a>
-        <a href='./?head-to-head='>Matchup Columns</a>
+        <a style={{ padding: '10px'}} href='./?columns=odds'>Odds Columns</a>
+        <a style={{ padding: '10px'}} href='./?head-to-head='>Matchup Columns</a>
         <AgGridReact
           rowData={rowData}
           columnDefs={columns}
           onGridReady={onGridReady}
+          defaultColDef={{tooltipComponent: PlayerTooltip}}
         >
         </AgGridReact>
       </div>

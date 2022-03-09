@@ -29,7 +29,7 @@ class TeamTableDecorator
 
   def expanded_player_columns
     [
-      { headerName: 'Total Top 100', field: 'top_100_players_count', sortable: true },
+      { headerName: 'Total Top 100', field: 'top_100_players_count', sortable: true, tooltipField: 'top_100_players_count' },
       { headerName: 'Total Top 30', field: 'first_round_players_count', sortable: true },
     ]
   end
