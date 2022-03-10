@@ -1,2 +1,2 @@
 <p>Synced At: <%= @synced_at %></p>
-<%= react_component("TeamsTable", { teamRows: @table.team_rows, columnDefs: @table.column_settings }) %>
+<%= react_component("TeamsTable", { teamRows: @table.team_rows, columnDefs: @table.column_settings, displayOdds: @table.tournament_started }) %>

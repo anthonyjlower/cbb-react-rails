@@ -14,6 +14,10 @@ class TeamTableDecorator
     return default_columns + odds_columns if @columns == 'odds'
   end
 
+  def tournament_started
+    (team_rows.pluck(:in_tournament?).uniq - [false]).present?
+  end
+
   private
 
   def default_columns
@@ -24,7 +28,9 @@ class TeamTableDecorator
       { headerName: 'Def Rank', field: 'defense_rank', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
       { headerName: '1st Round Perimiter', field: 'first_round_perimiter?', sortable: true, filter: true, filterParams: { buttons: ['reset'] } },
       { headerName: 'Highest Ranked Player', field: 'top_ranked_player', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
-    ]
+    ].tap do |arr|
+      arr << { headerName: 'In Tournament?', field: 'in_tournament?', filter: true } if tournament_started
+    end
   end
 
   def expanded_player_columns

@@ -130,6 +130,10 @@ class TeamDecorator
     OddsCalculator.calc_breakeven(@team[:champ])
   end
 
+  def in_tournament?
+    @team[:sweet_sixteen].present?
+  end
+
   private
 
   def players_data

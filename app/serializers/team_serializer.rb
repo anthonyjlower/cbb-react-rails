@@ -28,7 +28,8 @@ class TeamSerializer
              :sweet_sixteen_odds,
              :elite_eight_odds,
              :final_four_odds,
-             :champ_odds
+             :champ_odds,
+             :in_tournament?
 
   attribute :players do |obj|
     obj.players.map do |player|

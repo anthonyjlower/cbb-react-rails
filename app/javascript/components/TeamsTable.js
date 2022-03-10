@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
-const AgGrid = (rowData, columnDefs) => {
+const AgGrid = (rowData, columnDefs, displayOdds) => {
   let gridApi = {}
 
   const onGridReady = (params) => {
@@ -34,7 +34,7 @@ const AgGrid = (rowData, columnDefs) => {
     <>
       <div className="ag-theme-alpine" style={{height: '90vh', width: '95vw'}}>
         <button onClick={() => sizeToFit(gridApi)}>Size to Fit</button>
-        <a style={{ padding: '10px'}} href='./?columns=odds'>Odds Columns</a>
+        {displayOdds && <a style={{ padding: '10px'}} href='./?columns=odds'>Odds Columns</a>}
         <a style={{ padding: '10px'}} href='./?head-to-head='>Matchup Columns</a>
         <AgGridReact
           rowData={rowData}
@@ -51,7 +51,11 @@ const AgGrid = (rowData, columnDefs) => {
 class TeamsTable extends React.Component {
   render() {
     return (
-      AgGrid(this.props.teamRows, this.props.columnDefs)
+      AgGrid(
+        this.props.teamRows,
+        this.props.columnDefs,
+        this.props.displayOdds,
+      )
     )
   }
 }
