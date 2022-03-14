@@ -20,7 +20,8 @@ module TeamDictionary
             "name": "Akron",
             "kenpom_name": "Akron",
             "nbadraft_name": nil,
-            "espn_id": "2006"
+            "espn_id": "2006",
+            "538": "Akron",
         },
         {
             "name": "Alabama",
@@ -70,7 +71,8 @@ module TeamDictionary
             "name": "Arizona",
             "kenpom_name": "Arizona",
             "nbadraft_name": "Arizona",
-            "espn_id": "12"
+            "espn_id": "12",
+            "538": "Arizona",
         },
         {
             "name": "Arizona St.",
@@ -107,7 +109,8 @@ module TeamDictionary
             "name": "Auburn",
             "kenpom_name": "Auburn",
             "nbadraft_name": "Auburn",
-            "espn_id": "2"
+            "espn_id": "2",
+            "538": "Auburn",
         },
         {
             "name": "Austin Peay",
@@ -163,7 +166,8 @@ module TeamDictionary
             "name": "Boise St.",
             "kenpom_name": "Boise St.",
             "nbadraft_name": nil,
-            "espn_id": "68"
+            "espn_id": "68",
+            "538": "Boise State",
         },
         {
             "name": "Boston College",
@@ -199,7 +203,8 @@ module TeamDictionary
             "name": "Bryant",
             "kenpom_name": "Bryant",
             "nbadraft_name": nil,
-            "espn_id": "2803"
+            "espn_id": "2803",
+            "538": "Bryant",
         },
         {
             "name": "Bucknell",
@@ -241,7 +246,8 @@ module TeamDictionary
             "name": "Cal St. Fullerton",
             "kenpom_name": "Cal St. Fullerton",
             "nbadraft_name": nil,
-            "espn_id": "2239"
+            "espn_id": "2239",
+            "538": "CSU-Full.",
         },
         {
             "name": "Cal St. Northridge",
@@ -307,7 +313,8 @@ module TeamDictionary
             "name": "Chattanooga",
             "kenpom_name": "Chattanooga",
             "nbadraft_name": nil,
-            "espn_id": "236"
+            "espn_id": "236",
+            "538": "Chatt.",
         },
         {
             "name": "Chicago St.",
@@ -359,7 +366,8 @@ module TeamDictionary
             "name": "Colorado St.",
             "kenpom_name": "Colorado St.",
             "nbadraft_name": nil,
-            "espn_id": "36"
+            "espn_id": "36",
+            "538": "Colorado St.",
         },
         {
             "name": "Columbia",
@@ -403,7 +411,8 @@ module TeamDictionary
             "name": "Davidson",
             "kenpom_name": "Davidson",
             "nbadraft_name": nil,
-            "espn_id": "2166"
+            "espn_id": "2166",
+            "538": "Davidson",
         },
         {
             "name": "Dayton",
@@ -421,7 +430,8 @@ module TeamDictionary
             "name": "Delaware",
             "kenpom_name": "Delaware",
             "nbadraft_name": nil,
-            "espn_id": "48"
+            "espn_id": "48",
+            "538": "Delaware",
         },
         {
             "name": "Delaware St.",
@@ -465,7 +475,8 @@ module TeamDictionary
             "name": "Duke",
             "kenpom_name": "Duke",
             "nbadraft_name": "Duke",
-            "espn_id": "150"
+            "espn_id": "150",
+            "538": "Duke",
         },
         {
             "name": "Duquesne",
@@ -631,7 +642,8 @@ module TeamDictionary
             "name": "Georgia St.",
             "kenpom_name": "Georgia St.",
             "nbadraft_name": nil,
-            "espn_id": "2247"
+            "espn_id": "2247",
+            "538": "Georgia St.",
         },
         {
             "name": "Georgia Tech",
@@ -775,7 +787,8 @@ module TeamDictionary
             "name": "Indiana",
             "kenpom_name": "Indiana",
             "nbadraft_name": "Indiana",
-            "espn_id": "84"
+            "espn_id": "84",
+            "538": "Indiana",
         },
         {
             "name": "Indiana St.",
@@ -801,7 +814,8 @@ module TeamDictionary
             "name": "Iowa St.",
             "kenpom_name": "Iowa St.",
             "nbadraft_name": "Iowa St.",
-            "espn_id": "66"
+            "espn_id": "66",
+            "538": "Iowa State",
         },
         {
             "name": "Jackson St.",
@@ -819,7 +833,8 @@ module TeamDictionary
             "name": "Jacksonville St.",
             "kenpom_name": "Jacksonville St.",
             "nbadraft_name": nil,
-            "espn_id": "55"
+            "espn_id": "55",
+            "538": "J'ville State",
         },
         {
             "name": "James Madison",
@@ -856,7 +871,8 @@ module TeamDictionary
             "name": "Kentucky",
             "kenpom_name": "Kentucky",
             "nbadraft_name": "Kentucky",
-            "espn_id": "96"
+            "espn_id": "96",
+            "538": "Kentucky"
         },
         {
             "name": "LIU",
@@ -924,7 +940,8 @@ module TeamDictionary
             "name": "Longwood",
             "kenpom_name": "Longwood",
             "nbadraft_name": nil,
-            "espn_id": "2344"
+            "espn_id": "2344",
+            "538": "Longwood",
         },
         {
             "name": "Louisiana",
@@ -991,7 +1008,8 @@ module TeamDictionary
             "name": "Marquette",
             "kenpom_name": "Marquette",
             "nbadraft_name": nil,
-            "espn_id": "269"
+            "espn_id": "269",
+            "538": "Marquette",
         },
         {
             "name": "Marshall",
@@ -1028,7 +1046,8 @@ module TeamDictionary
             "name": "Memphis",
             "kenpom_name": "Memphis",
             "nbadraft_name": "Memphis",
-            "espn_id": "235"
+            "espn_id": "235",
+            "538": "Memphis",
         },
         {
             "name": "Mercer",
@@ -1046,7 +1065,8 @@ module TeamDictionary
             "name": "Miami FL",
             "kenpom_name": "Miami FL",
             "nbadraft_name": "Miami",
-            "espn_id": "2390"
+            "espn_id": "2390",
+            "538": "Miami",
         },
         {
             "name": "Miami OH",
@@ -1133,7 +1153,8 @@ module TeamDictionary
             "name": "Montana St.",
             "kenpom_name": "Montana St.",
             "nbadraft_name": nil,
-            "espn_id": "147"
+            "espn_id": "147",
+            "538": "Montana St.",
         },
         {
             "name": "Morehead St.",
@@ -1159,7 +1180,8 @@ module TeamDictionary
             "name": "Murray St.",
             "kenpom_name": "Murray St.",
             "nbadraft_name": nil,
-            "espn_id": "93"
+            "espn_id": "93",
+            "538": "Murray St.",
         },
         {
             "name": "N.C. State",
@@ -1213,7 +1235,8 @@ module TeamDictionary
             "name": "New Mexico St.",
             "kenpom_name": "New Mexico St.",
             "nbadraft_name": nil,
-            "espn_id": "166"
+            "espn_id": "166",
+            "538": "NM State",
         },
         {
             "name": "New Orleans",
@@ -1342,7 +1365,8 @@ module TeamDictionary
             "name": "Notre Dame",
             "kenpom_name": "Notre Dame",
             "nbadraft_name": "Notre Dame",
-            "espn_id": "87"
+            "espn_id": "87",
+            "538": "Notre Dame",
         },
         {
             "name": "Oakland",
@@ -1469,7 +1493,8 @@ module TeamDictionary
             "name": "Providence",
             "kenpom_name": "Providence",
             "nbadraft_name": nil,
-            "espn_id": "2507"
+            "espn_id": "2507",
+            "538": "Providence",
         },
         {
             "name": "Purdue",
@@ -1512,7 +1537,8 @@ module TeamDictionary
             "name": "Richmond",
             "kenpom_name": "Richmond",
             "nbadraft_name": nil,
-            "espn_id": "257"
+            "espn_id": "257",
+            "538": "Richmond",
         },
         {
             "name": "Rider",
@@ -1573,13 +1599,15 @@ module TeamDictionary
             "name": "Saint Mary's",
             "kenpom_name": "Saint Mary's",
             "nbadraft_name": nil,
-            "espn_id": "2608"
+            "espn_id": "2608",
+            "538": "St. Mary's",
         },
         {
             "name": "Saint Peter's",
             "kenpom_name": "Saint Peter's",
             "nbadraft_name": nil,
-            "espn_id": "2612"
+            "espn_id": "2612",
+            "538": "Saint Peter's",
         },
         {
             "name": "Sam Houston St.",
@@ -1597,7 +1625,8 @@ module TeamDictionary
             "name": "San Diego",
             "kenpom_name": "San Diego",
             "nbadraft_name": nil,
-            "espn_id": "301"
+            "espn_id": "301",
+            "538": "SDSU",
         },
         {
             "name": "San Diego St.",
@@ -1610,7 +1639,8 @@ module TeamDictionary
             "name": "San Francisco",
             "kenpom_name": "San Francisco",
             "nbadraft_name": "San Francisc0",
-            "espn_id": "2539"
+            "espn_id": "2539",
+            "538": "San Fran.",
         },
         {
             "name": "San Jose St.",
@@ -1634,7 +1664,8 @@ module TeamDictionary
             "name": "Seton Hall",
             "kenpom_name": "Seton Hall",
             "nbadraft_name": "Seton Hall",
-            "espn_id": "2550"
+            "espn_id": "2550",
+            "538": "Seton Hall",
         },
         {
             "name": "Siena",
@@ -1670,7 +1701,8 @@ module TeamDictionary
             "name": "South Dakota St.",
             "kenpom_name": "South Dakota St.",
             "nbadraft_name": nil,
-            "espn_id": "2571"
+            "espn_id": "2571",
+            "538": "S. Dakota St.",
         },
         {
             "name": "South Florida",
@@ -1780,7 +1812,8 @@ module TeamDictionary
             "name": "TCU",
             "kenpom_name": "TCU",
             "nbadraft_name": "TCU",
-            "espn_id": "2628"
+            "espn_id": "2628",
+            "538": "TCU",
         },
         {
             "name": "Tarleton St.",
@@ -1836,7 +1869,8 @@ module TeamDictionary
             "name": "Texas A&M Corpus Chris",
             "kenpom_name": "Texas A&M Corpus Chris",
             "nbadraft_name": nil,
-            "espn_id": "357"
+            "espn_id": "357",
+            "538": "TX A&M-CC",
         },
         {
             "name": "Texas Southern",
@@ -1898,7 +1932,8 @@ module TeamDictionary
             "name": "UAB",
             "kenpom_name": "UAB",
             "nbadraft_name": nil,
-            "espn_id": "5"
+            "espn_id": "5",
+            "538": "UAB",
         },
         {
             "name": "UC Davis",
@@ -2072,7 +2107,8 @@ module TeamDictionary
             "name": "Vermont",
             "kenpom_name": "Vermont",
             "nbadraft_name": nil,
-            "espn_id": "261"
+            "espn_id": "261",
+            "538": "Vermont",
         },
         {
             "name": "Villanova",
@@ -2193,13 +2229,15 @@ module TeamDictionary
             "name": "Wright St.",
             "kenpom_name": "Wright St.",
             "nbadraft_name": nil,
-            "espn_id": "2750"
+            "espn_id": "2750",
+            "538": "Wright State",
         },
         {
             "name": "Wyoming",
             "kenpom_name": "Wyoming",
             "nbadraft_name": nil,
-            "espn_id": "2751"
+            "espn_id": "2751",
+            "538": "Wyoming",
         },
         {
             "name": "Xavier",
@@ -2211,7 +2249,8 @@ module TeamDictionary
             "name": "Yale",
             "kenpom_name": "Yale",
             "nbadraft_name": nil,
-            "espn_id": "43"
+            "espn_id": "43",
+            "538": "Yale",
         },
         {
             "name": "Youngstown St.",

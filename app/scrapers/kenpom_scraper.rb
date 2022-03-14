@@ -32,7 +32,7 @@ class KenpomScraper < WebScraper
   private
 
   def parse_team_name(data)
-    data[1].text
+    data[1].text.tr("0-9", '').strip
   end
 
   def parse_record(data)

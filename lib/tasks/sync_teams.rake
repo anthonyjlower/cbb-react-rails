@@ -26,6 +26,7 @@ namespace :sync_teams do
         champ: row['WIN'].to_f
       }
 
+      binding.pry if Team.find_by('538', row.values.first).nil?
       teams.find { |team| team['name'] == Team.find_by('538', row.values.first)[:name] }.merge!(data)
     end
 
