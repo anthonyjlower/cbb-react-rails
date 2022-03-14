@@ -13,7 +13,7 @@ namespace :sync_teams do
   task :import_538_odds, %i[filename] => [:environment] do |_,args|
     require 'CSV'
 
-    doc = CSV.parse(File.read("#{Rails.root}/lib/csv/#{args.filename}"), headers: true)
+    doc = CSV.parse(File.read("./lib/csv/#{args.filename}"), headers: true)
     redis = Redis.new
     teams = JSON.parse(redis.get('teams'))
 
