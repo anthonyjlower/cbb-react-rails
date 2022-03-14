@@ -11,7 +11,7 @@ namespace :sync_teams do
   end
 
   task :import_538_odds, %i[filename] => [:environment] do |_,args|
-    require 'CSV'
+    require 'csv'
 
     doc = CSV.parse(File.read("./lib/csv/#{args.filename}"), headers: true)
     redis = Redis.new
