@@ -17,6 +17,8 @@ class TeamSerializer
              :top_100_players_count,
              :first_round_players_count,
              :free_throw_percentage,
+             :two_point_percentage,
+             :percent_of_shots_as_threes,
              :effective_field_goal_percentage,
              :turnover_rate,
              :offensive_rebound_rate,

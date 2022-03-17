@@ -108,8 +108,17 @@ class TeamDecorator
     display_as_percentage((field_goal_makes / field_goal_attempts.to_f))
   end
 
+  def two_point_percentage
+    val = (field_goal_makes - three_point_makes).to_f / (field_goal_attempts - three_point_attempts).to_f
+    display_as_percentage(val)
+  end
+
   def three_point_percentage
     display_as_percentage((three_point_makes / three_point_attempts.to_f))
+  end
+
+  def percent_of_shots_as_threes
+    display_as_percentage(three_point_attempts / field_goal_attempts.to_f)
   end
 
   # Odds

@@ -52,6 +52,8 @@ class TeamTableDecorator
   def factor_four_columns
     [
       { headerName: 'eFG%', field: 'effective_field_goal_percentage', sortable: true },
+      { headerName: '2pt%', field: 'two_point_percentage', sortable: true },
+      { headerName: '3GA/FGA', field: 'percent_of_shots_as_threes', sortable: true },
       { headerName: 'TO%', field: 'turnover_rate', sortable: true },
       { headerName: 'OReb%', field: 'offensive_rebound_rate', sortable: true },
       { headerName: 'FTA/FGA', field: 'free_throw_attempts_per_field_goal_attempt', sortable: true },
