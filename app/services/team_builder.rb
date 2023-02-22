@@ -1,8 +1,8 @@
 class TeamBuilder
-  def initialize
-    @kenpom_data = KenpomScraper.new.scrape
-    @draft_data = NbaDraftScraper.new.scrape
-    @espn_data = EspnTeamStatsScraper.new.scrape
+  def initialize(kenpom_data:nil, draft_data:nil, espn_data:nil)
+    @kenpom_data = kenpom_data || KenpomScraper.new.scrape
+    @draft_data = draft_data || NbaDraftScraper.new.scrape
+    @espn_data = espn_data || EspnTeamStatsScraper.new.scrape
     @team_names = Team.all.pluck(:name)
   end
 
@@ -32,6 +32,8 @@ class TeamBuilder
   def kenpom_attrs(name)
     kenpom_name = Team.find_by(:name, name)[:kenpom_name]
     team = @kenpom_data.find { |team| team[:team_name] == kenpom_name }
+    raise StandardError.new("Cannot find Kenpom team: #{name}") if team.nil?
+
     {
       record: team[:record],
       kenpom_rank: team[:kenpom_rank],
@@ -50,6 +52,8 @@ class TeamBuilder
   def stats_attrs(name)
     stats_id = Team.find_by(:name, name)[:espn_id]
     team = @espn_data[stats_id]
+    raise StandardError.new("Cannot find ESPN team: #{name}") if team.nil?
+
     {
       field_goal_makes: team[:field_goal_makes],
       field_goal_attempts: team[:field_goal_attempts],
