@@ -1,12 +1,14 @@
 class EspnTeamStatsScraper
   ESPN_BASE_URL = 'https://www.espn.com/mens-college-basketball/team/stats/_/id'
 
-  def initialize
+  def initialize(tag:nil)
+    @tag = tag
     @espn_ids = Team.all.pluck(:espn_id)
   end
 
   def scrape
     @espn_ids.each_with_object({}) do |id, h|
+      pp "Fetching #{id}"
       h[id] = formatted_stats(team_data(id))
     end
   end
@@ -84,7 +86,8 @@ class EspnTeamStatsScraper
   end
 
   def team_data(id)
-    doc = Nokogiri::HTML(URI.open("#{ESPN_BASE_URL}/#{id}"))
+    url = @tag.nil? ? "#{ESPN_BASE_URL}/#{id}" + @tag : "#{ESPN_BASE_URL}/#{id}"
+    doc = Nokogiri::HTML(URI.open(url))
     doc.css('tr').last.children.to_a
   end
 end

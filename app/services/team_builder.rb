@@ -3,18 +3,19 @@ class TeamBuilder
     @kenpom_data = kenpom_data || KenpomScraper.new.scrape
     @draft_data = draft_data || NbaDraftScraper.new.scrape
     @espn_data = espn_data || EspnTeamStatsScraper.new.scrape
-    @team_names = Team.all.pluck(:name)
+    @kenpom_names = @kenpom_data.pluck(:team_name)
   end
 
   def build
-    @team_names.map do |name|
-      team_data(name)
+    @kenpom_names.map do |kenpom_name|
+      team_data(kenpom_name)
     end
   end
 
   private
 
-  def team_data(name)
+  def team_data(kenpom_name)
+    name = Team.find_by(:kenpom_name, kenpom_name)[:name]
     {
       name: name,
       players: player_attrs(name),
@@ -31,9 +32,9 @@ class TeamBuilder
 
   def kenpom_attrs(name)
     kenpom_name = Team.find_by(:name, name)[:kenpom_name]
+    raise StandardError.new("Cannot find Kenpom team: #{name}") if kenpom_name.nil?
     team = @kenpom_data.find { |team| team[:team_name] == kenpom_name }
-    raise StandardError.new("Cannot find Kenpom team: #{name}") if team.nil?
-
+    return {} if team.nil?
     {
       record: team[:record],
       kenpom_rank: team[:kenpom_rank],
