@@ -54,7 +54,6 @@ class TeamBuilder
     stats_id = Team.find_by(:name, name)[:espn_id]
     team = @espn_data[stats_id]
     raise StandardError.new("Cannot find ESPN team: #{name}") if team.nil?
-
     {
       field_goal_makes: team[:field_goal_makes],
       field_goal_attempts: team[:field_goal_attempts],

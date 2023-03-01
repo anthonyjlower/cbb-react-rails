@@ -9,7 +9,8 @@ class EspnTeamStatsScraper
   def scrape
     @espn_ids.each_with_object({}) do |id, h|
       pp "Fetching #{id}"
-      h[id] = formatted_stats(team_data(id))
+      data = team_data(id)
+      h[id] = data.present? ? formatted_stats(data) : {}
     end
   end
 
@@ -86,8 +87,8 @@ class EspnTeamStatsScraper
   end
 
   def team_data(id)
-    url = @tag.nil? ? "#{ESPN_BASE_URL}/#{id}" + @tag : "#{ESPN_BASE_URL}/#{id}"
+    url = @tag.present? ? "#{ESPN_BASE_URL}/#{id}" + @tag : "#{ESPN_BASE_URL}/#{id}"
     doc = Nokogiri::HTML(URI.open(url))
-    doc.css('tr').last.children.to_a
+    doc.css('tr').last&.children&.to_a
   end
 end
