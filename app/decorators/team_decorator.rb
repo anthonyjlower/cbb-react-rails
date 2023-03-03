@@ -80,6 +80,10 @@ class TeamDecorator
 
   # Calculated
 
+  def composite_rank
+    ((net_rank + offense_rank + defense_rank) / 3.to_f).round(1)
+  end
+
   def free_throw_percentage
     display_as_percentage((free_throw_makes / free_throw_attempts.to_f))
   end
@@ -119,6 +123,10 @@ class TeamDecorator
 
   def percent_of_shots_as_threes
     display_as_percentage(three_point_attempts / field_goal_attempts.to_f)
+  end
+
+  def stocks
+    ((@team[:steals] + @team[:blocks]) / games_played.to_f).round(2)
   end
 
   # Odds

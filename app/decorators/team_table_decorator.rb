@@ -24,10 +24,10 @@ class TeamTableDecorator
     [
       { field: 'name', filter: true, resizable: false, pinned: 'left', cellClass: 'lock-pinned', filterParams: { buttons: ['reset'] } },
       { headerName: 'Rank', field: 'net_rank', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
+      { headerName: 'Composite+', field: 'composite_rank', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
       { headerName: 'Off Rank', field: 'offense_rank', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
       { headerName: 'Def Rank', field: 'defense_rank', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
       { headerName: '1st Round Perimiter', field: 'first_round_perimiter?', sortable: true, filter: true, filterParams: { buttons: ['reset'] } },
-      { headerName: 'Highest Ranked Player', field: 'top_ranked_player', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
     ].tap do |arr|
       arr << { headerName: 'In Tournament?', field: 'in_tournament?', filter: true } if tournament_started
     end
@@ -36,7 +36,7 @@ class TeamTableDecorator
   def expanded_player_columns
     [
       { headerName: 'Total Top 100', field: 'top_100_players_count', sortable: true, tooltipField: 'top_100_players_count' },
-      { headerName: 'Total Top 30', field: 'first_round_players_count', sortable: true },
+      # { headerName: 'Total Top 30', field: 'first_round_players_count', sortable: true },
     ]
   end
 
@@ -52,11 +52,12 @@ class TeamTableDecorator
   def factor_four_columns
     [
       { headerName: 'eFG%', field: 'effective_field_goal_percentage', sortable: true },
-      { headerName: '2pt%', field: 'two_point_percentage', sortable: true },
-      { headerName: '3GA/FGA', field: 'percent_of_shots_as_threes', sortable: true },
+      # { headerName: '2pt%', field: 'two_point_percentage', sortable: true },
+      # { headerName: '3GA/FGA', field: 'percent_of_shots_as_threes', sortable: true },
       { headerName: 'TO%', field: 'turnover_rate', sortable: true },
       { headerName: 'OReb%', field: 'offensive_rebound_rate', sortable: true },
       { headerName: 'FTA/FGA', field: 'free_throw_attempts_per_field_goal_attempt', sortable: true },
+      { headerName: 'STOCKS', field: 'stocks', sortable: true },
     ]
   end
 
