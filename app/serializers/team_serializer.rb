@@ -5,6 +5,7 @@ class TeamSerializer
              :record,
              :net_rank,
              :composite_rank,
+             :ips,
              :net_rating,
              :offense_rank,
              :offense_rating,

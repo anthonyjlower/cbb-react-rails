@@ -81,7 +81,16 @@ class TeamDecorator
   # Calculated
 
   def composite_rank
-    ((net_rank + offense_rank + defense_rank) / 3.to_f).round(1)
+    @composite_rank ||= ((net_rank + offense_rank + defense_rank) / 3.to_f).round(1)
+  end
+
+  def ips
+    top_15_comp_points = composite_rank <= 15 ? 1 : 0
+    top_25_comp_points = composite_rank <= 25 ? 1 : 0
+    net_points = net_rank <= 15 ? 1 : 0
+    def_points = defense_rank <= 20 ? 1 : 0
+    off_points = offense_rank <= 20 ? 1 : 0
+    [top_15_comp_points, top_25_comp_points, net_points, def_points, off_points].sum
   end
 
   def free_throw_percentage
