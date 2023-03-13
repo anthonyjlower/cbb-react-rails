@@ -9,9 +9,10 @@ class TeamTableDecorator
   end
 
   def column_settings
-    return default_columns if @columns.nil?
-    return default_columns + expanded_player_columns + factor_four_columns if @columns == 'head_to_head'
+    # return default_columns if @columns.nil?
+    # return default_columns + expanded_player_columns + factor_four_columns if @columns == 'head_to_head'
     return default_columns + odds_columns if @columns == 'odds'
+    return default_columns + expanded_player_columns
   end
 
   def tournament_started
@@ -23,9 +24,9 @@ class TeamTableDecorator
   def default_columns
     [
       { field: 'name', filter: true, resizable: false, pinned: 'left', cellClass: 'lock-pinned', filterParams: { buttons: ['reset'] } },
-      { headerName: 'Rank', field: 'net_rank', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
-      { headerName: 'IPS', field: 'ips', sortable: true },
+      { headerName: 'TIPs', field: 'ips', sortable: true },
       { headerName: 'Composite+', field: 'composite_rank', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
+      { headerName: 'Net Rank', field: 'net_rank', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
       { headerName: 'Off Rank', field: 'offense_rank', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
       { headerName: 'Def Rank', field: 'defense_rank', sortable: true, filter: 'agNumberColumnFilter', filterParams: { buttons: ['reset'] } },
       { headerName: '1st Round Perimiter', field: 'first_round_perimiter?', sortable: true, filter: true, filterParams: { buttons: ['reset'] } },
