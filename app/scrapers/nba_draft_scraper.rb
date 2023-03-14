@@ -1,12 +1,14 @@
 class NbaDraftScraper < WebScraper
   NBA_DRAFT_URL = 'https://www.nbadraft.net/rankings/bigboard'.freeze
 
-  def initialize
-    super(url: NBA_DRAFT_URL)
+  def initialize(tag:nil)
+    @url = (tag ? NBA_DRAFT_URL + tag : NBA_DRAFT_URL)
+    super(url: @url)
   end
 
   def scrape
     rows.each_with_object({}) do |row, h|
+      next if row.text == "\n"
       data = row.css('td')
       key = parse_team_name(data)
       h.keys.include?(key) ? h[key] << formatted_player_data(data) : h[key] = [formatted_player_data(data)]
