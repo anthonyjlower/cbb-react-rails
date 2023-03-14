@@ -94,43 +94,53 @@ class TeamDecorator
   end
 
   def free_throw_percentage
+    return 'No Data' if free_throw_makes.nil? || free_throw_attempts.nil?
     display_as_percentage((free_throw_makes / free_throw_attempts.to_f))
   end
 
   def effective_field_goal_percentage
+    return 'No Data' if field_goal_makes.nil? || three_point_makes.nil? || field_goal_attempts.nil?
     display_as_percentage(((field_goal_makes + 0.5 * three_point_makes) / field_goal_attempts.to_f))
   end
 
   def turnover_rate
+    return 'No Data' if turnovers.nil? || possessions.nil?
     display_as_percentage(turnovers / possessions.to_f)
   end
 
   def offensive_rebound_rate
+    return 'No Data' if offensive_rebounds.nil? || missed_shots.nil?
     display_as_percentage((offensive_rebounds / missed_shots.to_f))
   end
 
   def free_throw_attempts_per_field_goal_attempt
+    return 'No Data' if free_throw_attempts.nil? || field_goal_attempts.nil?
     (free_throw_attempts / field_goal_attempts.to_f).round(2)
   end
 
   def points_per_game
+    return 'No Data' if points.nil? || games_played.nil?
     points.to_f / games_played
   end
 
   def field_goal_percentage
+    return 'No Data' if field_goal_makes.nil? || field_goal_attempts.nil?
     display_as_percentage((field_goal_makes / field_goal_attempts.to_f))
   end
 
   def two_point_percentage
+    return 'No Data' if field_goal_makes.nil? || field_goal_attempts.nil? || three_point_attempts.nil?
     val = (field_goal_makes - three_point_makes).to_f / (field_goal_attempts - three_point_attempts).to_f
     display_as_percentage(val)
   end
 
   def three_point_percentage
+    return 'No Data' if three_point_makes.nil? || three_point_attempts.nil?
     display_as_percentage((three_point_makes / three_point_attempts.to_f))
   end
 
   def percent_of_shots_as_threes
+    return 'No Data' if three_point_attempts.nil? || field_goal_attempts.nil?
     display_as_percentage(three_point_attempts / field_goal_attempts.to_f)
   end
 
