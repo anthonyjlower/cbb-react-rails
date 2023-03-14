@@ -34,8 +34,9 @@ const AgGrid = (rowData, columnDefs, displayOdds) => {
     <>
       <div className="ag-theme-alpine" style={{height: '90vh', width: '95vw'}}>
         <button onClick={() => sizeToFit(gridApi)}>Size to Fit</button>
+        <a style={{ padding: '10px'}} href='./'>Simple</a>
         {displayOdds && <a style={{ padding: '10px'}} href='./?columns=odds'>Odds Columns</a>}
-        <a style={{ padding: '10px'}} href='./?head-to-head='>Matchup Columns</a>
+        <a style={{ padding: '10px'}} href='./?columns=head_to_head'>Matchup Columns</a>
         <AgGridReact
           rowData={rowData}
           columnDefs={columns}
