@@ -1,8 +1,9 @@
 class KenpomScraper < WebScraper
   KENPOM_URL = 'https://kenpom.com'.freeze
 
-  def initialize
-    super(url: KENPOM_URL)
+  def initialize(tag:nil)
+    @url = (tag ? KENPOM_URL + tag : KENPOM_URL)
+    super(url: @url)
   end
 
   def scrape
@@ -15,6 +16,7 @@ class KenpomScraper < WebScraper
   def format_team_data(data)
     {
       team_name: parse_team_name(data),
+      tournament_seed: parse_tournament_seed(data),
       record: parse_record(data),
       kenpom_rank: parse_kenpom_rank(data),
       kenpom_net_rating: parse_kenpom_net_rating(data),
@@ -33,6 +35,15 @@ class KenpomScraper < WebScraper
 
   def parse_team_name(data)
     data[1].text.tr("0-9", '').strip
+  end
+
+  def parse_tournament_seed(data)
+    seed = data[1].css('.seed').text
+    seed.present? ? seed.to_i : nil
+  end
+
+  def parse_conference(data)
+    data[2].text
   end
 
   def parse_record(data)
