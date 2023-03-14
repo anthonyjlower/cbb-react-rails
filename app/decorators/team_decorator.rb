@@ -80,6 +80,19 @@ class TeamDecorator
 
   # Calculated
 
+  def composite_rank
+    @composite_rank ||= ((net_rank + offense_rank + defense_rank) / 3.to_f).round(1)
+  end
+
+  def ips
+    top_15_comp_points = composite_rank <= 15 ? 1 : 0
+    top_25_comp_points = composite_rank <= 25 ? 1 : 0
+    net_points = net_rank <= 15 ? 1 : 0
+    def_points = defense_rank <= 20 ? 1 : 0
+    off_points = offense_rank <= 20 ? 1 : 0
+    [top_15_comp_points, top_25_comp_points, net_points, def_points, off_points].sum
+  end
+
   def free_throw_percentage
     return 'No Data' if free_throw_makes.nil? || free_throw_attempts.nil?
     display_as_percentage((free_throw_makes / free_throw_attempts.to_f))
@@ -129,6 +142,10 @@ class TeamDecorator
   def percent_of_shots_as_threes
     return 'No Data' if three_point_attempts.nil? || field_goal_attempts.nil?
     display_as_percentage(three_point_attempts / field_goal_attempts.to_f)
+  end
+
+  def stocks
+    ((@team[:steals] + @team[:blocks]) / games_played.to_f).round(2)
   end
 
   # Odds
